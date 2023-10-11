@@ -1,0 +1,827 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D5A9E36-53BE-4239-A45D-2A63F74FD019}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Stock_Analysis.ModuleMain</StartupObject>
+    <RootNamespace>Stock_Analysis</RootNamespace>
+    <AssemblyName>Stock_Analysis</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Stock_Analysis.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Stock_Analysis.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ClsConfigTool">
+      <HintPath>..\dll\ClsConfigTool.dll</HintPath>
+    </Reference>
+    <Reference Include="eCAGrandDog, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\eCAGrandDog.dll</HintPath>
+    </Reference>
+    <Reference Include="eCAHeartBeat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\eCAHeartBeat.dll</HintPath>
+    </Reference>
+    <Reference Include="eCALogTool">
+      <HintPath>..\dll\eCALogTool.dll</HintPath>
+    </Reference>
+    <Reference Include="eCAMQTool, Version=1.0.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\eCAMQTool.dll</HintPath>
+    </Reference>
+    <Reference Include="eCASECSQueue">
+      <HintPath>..\dll\eCASECSQueue.dll</HintPath>
+    </Reference>
+    <Reference Include="eCATCH_SharedMemory">
+      <HintPath>..\dll\eCATCH_SharedMemory.dll</HintPath>
+    </Reference>
+    <Reference Include="eCA_DBTool, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\eCA_DBTool.dll</HintPath>
+    </Reference>
+    <Reference Include="eCA_HostObject">
+      <HintPath>..\..\eCA_HostObject\eCA_HostObject\bin\Debug\eCA_HostObject.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="eCA_TransactionMessage">
+      <HintPath>..\..\eCA_TransactionMessage\eCA_TransactionMessage\eCA_TransactionMessage\bin\Debug\eCA_TransactionMessage.dll</HintPath>
+    </Reference>
+    <Reference Include="eWMSMessage">
+      <HintPath>..\dll\eWMSMessage.dll</HintPath>
+    </Reference>
+    <Reference Include="HeartBeatObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\HeartBeatObject.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Scripting, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\eCA_TransactionMessage\dll\Interop.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Excel\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="NDde, Version=2.1.563.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NDde.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WCFService_WMS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WCFService_WMS\WCFService_WMS\bin\Debug\WCFService_WMS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\Controller\cksMQ.vb" />
+    <Compile Include="Class\Controller\HostMain.vb" />
+    <Compile Include="Class\TOOL\ProcessTool.vb" />
+    <Compile Include="Class\TOOL\Tools.vb" />
+    <Compile Include="Class\TOOL\FTPClient.vb" />
+    <Compile Include="Connected Services\getCompStock\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\T1F1M1_SendMessage\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\enuHTTPContentType.vb" />
+    <Compile Include="Enum\enuRabbitMQ.vb" />
+    <Compile Include="Enum\enuCommandResult.vb" />
+    <Compile Include="Enum\enuGUICommandFunctionID.vb" />
+    <Compile Include="Enum\enuHandlingInterfaceType.vb" />
+    <Compile Include="Enum\enuUUID.vb" />
+    <Compile Include="Enum\enuHostCommandFunctionID.vb" />
+    <Compile Include="Enum\enuWMSCommandFunctionID.vb" />
+    <Compile Include="Form\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormHeartBeat.Designer.vb">
+      <DependentUpon>FormHeartBeat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormHeartBeat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormInfo.Designer.vb">
+      <DependentUpon>FormInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormMain.Designer.vb">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FormMsg.designer.vb">
+      <DependentUpon>FormMsg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FormMsg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmMessageTest.designer.vb">
+      <DependentUpon>FrmMessageTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmMessageTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmPrint.designer.vb">
+      <DependentUpon>FrmPrint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmPrint.vb" />
+    <Compile Include="Module\Common\Module_Auto_Excute.vb" />
+    <Compile Include="Module\Common\Module_Auto_Report.vb" />
+    <Compile Include="Module\Common\Module_DataFilter.vb" />
+    <Compile Include="Module\Common\Module_PO_Posting.vb" />
+    <Compile Include="Module\Common\Module_Process_History.vb" />
+    <Compile Include="Module\HandlingInterface\Module_HTTPHandling.vb" />
+    <Compile Include="Module\HandlingInterface\Module_MQHandling.vb" />
+    <Compile Include="Module\HandlingInterface\Module_ProcessMessage.vb" />
+    <Compile Include="Module\Host_Message\CosmoWMS\Send\Module_Send_Outbound_Info.vb" />
+    <Compile Include="Module\Host_Message\CosmoWMS\Send\Module_PostingCheck.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendTransferOwnerData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendInboundReturnData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendInboundData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendBuyData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendSellReturnData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendSellData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendOtherOutData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendOtherInData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendTransferData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendReturnData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendPickUpData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendPickingReturnData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendTempInOutReturnData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendTempInOutData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendInventoryChangeData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendTransactionData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_SendSKUUnitConversionData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_SendSKUChangeData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_SendWarehouseData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_SKUManagement.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_POManagement_SendProduceInData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendOutsourcePurchaseData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement_SendPickingData.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\Module_POManagement.vb" />
+    <Compile Include="Module\Host_Message\ERP\Receive\TaiYin\Module_StocktakingManagement_SendInventoryData.vb" />
+    <Compile Include="Module\HTG\Module_SKUManagement_HTG_Result.vb" />
+    <Compile Include="Module\HTG\Module_TransactionOederManagement_HTG_Result.vb" />
+    <Compile Include="Module\HTG\Module_POManagement_HTG_Result.vb" />
+    <Compile Include="Module\HTG\Module_SKUManagement_INVXB.vb" />
+    <Compile Include="Module\HTG\Module_POManagement_HTG_Transfer.vb" />
+    <Compile Include="Module\HTG\Module_POManagement_HTG_Pickup.vb" />
+    <Compile Include="Module\HTG\Module_POManagement_HTG_Sell.vb" />
+    <Compile Include="Module\HTG\Module_POManagement_HTG_Buy.vb" />
+    <Compile Include="Module\HTG\Module_POManagement_HTG_Produce_In.vb" />
+    <Compile Include="Module\MCS_Message\Receive\Module_T3F4R2_DeviceAlarmReport.vb" />
+    <Compile Include="Module\MCS_Message\Receive\Module_T3F5R4_LineInProductionInfoReset.vb" />
+    <Compile Include="Module\MCS_Message\Receive\Module_T3F5R3_LineInProductionInfoReport.vb" />
+    <Compile Include="Module\MCS_Message\Receive\Module_T3F5R2_LineInfoReport.vb" />
+    <Compile Include="Module\MCS_Message\Receive\Module_T3F5R1_LineStatusChangeReport.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T10F4U1_MainFileImport.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T11F1U12_StocktakingExecution.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T11F1U11_ProducePOExecution.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T6F5U2_ItemLabelPrint.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T6F5U1_ItemLabelManagement.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T5F1U4_PODownload.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T11F2U1_InventoryComparison.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T5F1U11_POExecution.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T11F3U1_StocktakingDownload.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T11F1U1_PODownload.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T11F1U2_POExecution.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T3F5U1_MaintenanceSet.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T3F5U2_Maintenance.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T3F5U3_LineBigDataAlarmSet.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T3F5U4_ProductionCountSet.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T3F5U5_ClassProductionSet.vb" />
+    <Compile Include="Module\WMS_Message\Module_ProcessWMSMessage.vb" />
+    <Compile Include="Module\WMS_Message\Module_Send_WMSMessage.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T5F1S4_PODeliveryReport.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T5F1S13_TransationPOExecution.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T10F2S1_StocktakingReport.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T11F1S1_POClose_old.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T11F1S1_POClose.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T5F1S1_WOClose.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T5F1S3_POReceiptReport.vb" />
+    <Compile Include="Module\WMS_Message\Receive\Module_T5F1U90_WOExcuting.vb" />
+    <Compile Include="Module\WMS_Message\Send\Module_SendTransferDataToERP.vb" />
+    <Compile Include="Module\UI_Message\Receive\Module_T11F1U2_ProducePOExecution_back.vb" />
+    <Compile Include="Module\HandlingInterface\Module_DBHandling.vb" />
+    <Compile Include="Module\Common\Module_ProcessControl.vb" />
+    <Compile Include="Module\Common\Module_Process.vb" />
+    <Compile Include="Module\Common\ModuleDeclaration.vb" />
+    <Compile Include="Module\Common\ModuleHelpFunc.vb" />
+    <Compile Include="Module\Common\ModuleMain.vb" />
+    <Compile Include="Module\Common\Mod_HttpListener.vb" />
+    <Compile Include="Module\Common\Mod_HttpPost.vb" />
+    <Compile Include="Module\Common\Mod_WCFHost.vb" />
+    <Compile Include="Module\Common\VersionInformation.vb" />
+    <Compile Include="Module\WMS_Message\Send\Module_T5F1U1_POManagement.vb" />
+    <Compile Include="Module\WMS_Message\Send\Module_T5F2U62_AutoInbound.vb" />
+    <Compile Include="Module\WMS_Message\Send\Module_T5F3U23_POToWO.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormHeartBeat.resx">
+      <DependentUpon>FormHeartBeat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormInfo.resx">
+      <DependentUpon>FormInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMain.resx">
+      <DependentUpon>FormMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FormMsg.resX">
+      <DependentUpon>FormMsg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmMessageTest.resx">
+      <DependentUpon>FrmMessageTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources1.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\OfflineWMS.NET.vshost.exe.manifest" />
+    <None Include="bin\WCFService_WMS.dll.config" />
+    <None Include="Connected Services\getCompStock\getCompStock_WSD.wsdl" />
+    <None Include="Connected Services\getCompStock\Stock_Analysis.getCompStock.getCompStockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CheckApsExecutionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CheckExecAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CheckItemBackQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CheckItemReqQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CheckPODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CheckUserAuthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CheckWODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateAddressDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateBillingAPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateBOMDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateBOMDetailDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateBOMMasterDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateCustomerContactDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateCustomerDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateCustomerOtheraddressDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateDepartmentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateEmployeeDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateIssueReturnDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateItemMasterDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateMISCIssueDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreatePOReceivingData1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreatePOReceivingDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreatePotentialCustomerDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreatePurchaseStockInResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreatePurchaseStockOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateQuotationDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateRBODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateSalesReturnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateShippingOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateStockDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateStockInDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateTransferNoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateVendorDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateVoucherDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateWOStockinDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CreateWOWorkReportDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.CRMGetCustomerDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.EboGetCustDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.EboGetOrderDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.EboGetProdDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetAccountDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetAccountSubjectDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetAccountTypeDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetAreaDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetAreaListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetAxmDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetBasicCodeDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetBOMDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetComponentrepsubDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCostGroupDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCountingLabelDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCountryDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCountryListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCurrencyDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCurrencyListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCustListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCustomerContactDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCustomerDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCustomerOtheraddressDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetCustomerProductDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetDepartmentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetDepartmentListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetDocumentNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetEmployeeDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetEmployeeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetFQCDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetInspectionDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetItemDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetItemListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetItemStockListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetLabelTypeDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetLocationDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetMenuDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetMFGDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetMFGSettingSmaDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetMonthListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetOperationDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetOrganizationListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetOverdueAmtDetailDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetOverdueAmtRankingDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetPackingMethodDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetPODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetPOReceivingInDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetPOReceivingOutDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetPotentialCustomerDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetProdClassListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetProductClassDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetPurchaseStockInQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetPurchaseStockOutQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetQtyConversionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetReasonCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetReceivingQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetReportDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetSalesDetailDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetSalesDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetSalesStatisticsDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetShippingNoticeDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetShippingOrderDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetSOInfoDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetSOInfoDetailDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetStockDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetSupplierDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetSupplierItemDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetTableAmendmentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetTaxTypeDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetTransactionCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetUnitConversionDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetUnitDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetUserTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetVoucherDocumentDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetWarehouseDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetWODataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetWOIssueDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.GetWOStockQtyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.RunCommandResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.TIPTOPGateWayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.UpdateCountingLabelDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Stock_Analysis.ServiceReference1.UpdateWOIssueDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\TIPTOPServiceGateWay.wsdl" />
+    <None Include="Connected Services\T1F1M1_SendMessage\WMS_WCFService.wsdl" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\PrintFormatSetting.xml" />
+    <Content Include="bin\tmp.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\UIExample.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\WCFService_WMS.dll" />
+    <Content Include="bin\WCFService_WMS.pdb" />
+    <Content Include="bin\WCFService_WMS.xml" />
+    <Content Include="bin\WorkReqExample.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\Debug\OfflineWMS.NET.vshost.exe" />
+    <Content Include="Changelog.txt" />
+    <None Include="Connected Services\getCompStock\configuration91.svcinfo" />
+    <None Include="Connected Services\getCompStock\configuration.svcinfo" />
+    <None Include="Connected Services\getCompStock\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Connected Services\T1F1M1_SendMessage\configuration91.svcinfo" />
+    <None Include="Connected Services\T1F1M1_SendMessage\configuration.svcinfo" />
+    <None Include="Connected Services\T1F1M1_SendMessage\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="HostHandler icon.ico" />
+    <Content Include="icon.ico" />
+    <Content Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\getCompStock\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+    <WCFMetadataStorage Include="Connected Services\T1F1M1_SendMessage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Module\Host_Message\CosmoWMS\Receive\" />
+    <Folder Include="Module\Host_Message\ERP\Send\" />
+    <Folder Include="Module\MCS_Message\Send\" />
+    <Folder Include="Module\UI_Message\Send\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

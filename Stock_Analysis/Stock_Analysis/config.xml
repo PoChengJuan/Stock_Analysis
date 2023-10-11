@@ -1,0 +1,47 @@
+<Config>
+	    <Public>
+           <RootPath>D:\Log</RootPath>   
+           <LogPath>HostHandler\</LogPath>
+		       <ExportPath>D:\Log\PDF</ExportPath>
+	    	   <TraceLv>5</TraceLv>
+	    	   <TrxFlag>1</TrxFlag>
+	    	   <HideFlg>1</HideFlg>
+	    	   <MaxViewLine>100</MaxViewLine>
+	    	   <ViewLV>3</ViewLV>
+           <RefreshAliveTime>5000</RefreshAliveTime>
+	         <!--WCF Host IP:Port-->
+			 <WebServiceTimeOut>120</WebServiceTimeOut>
+			 <!-- 172.20.10.38  192.168.8.199 -->
+           <WCFHostIpPort>172.20.10.38:10002</WCFHostIpPort>
+           <!--USI Auto Report time 自動過帳的時間區間 毫秒-->
+           <AutoReportSleepTime>300000</AutoReportSleepTime>
+		   <ReportTime>12:00:00</ReportTime>
+		   <!--ReportTime Format:HH:mm:ss-->
+		   <!--Heart Beat IP:Port     Vito12b30-->
+           <HeartBeatPort>127.0.0.1:8735</HeartBeatPort>
+      </Public>
+      <DBList>
+        <DBINFO>
+          <DBEnum>2</DBEnum>(1:WMS/2:MCS)
+          <DBType>0</DBType>
+          <!-- <DBServer>10.136.214.10/hdzncdb</DBServer> -->
+          <!-- <DBName>hdzncdb</DBName> -->
+          <!-- <UID>WCS</UID> -->
+          <!-- <PWD>Manager</PWD> -->
+          <DBServer>127.0.0.1/xe</DBServer>
+          <DBPort>1521</DBPort>
+          <DBName>xe</DBName>
+          <UID>USINK</UID>
+          <PWD>USINK</PWD>
+        </DBINFO>
+        <DBINFO>
+          <DBEnum>1</DBEnum>(1:WMS/2:MCS).
+          <DBType>0</DBType>
+          <DBServer>127.0.0.1/xe</DBServer>
+          <DBPort>1521</DBPort>
+          <DBName>xe</DBName>
+          <UID>USINK</UID>
+          <PWD>USINK</PWD>
+        </DBINFO>
+      </DBList>
+</Config>

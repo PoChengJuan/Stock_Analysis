@@ -1,0 +1,19 @@
+﻿eWMS Changelog:
+
+Version 1.0.1 (Released 20141001)
+  -Minor bug fixed.
+	*20140930
+	  Bug fixed: MaterialID length in DB Schema is adjusted to 50 bytes
+	  Bug fixed: Modify all event xml form with MaterialID, because user has special character in MaterialID like (" , -)
+
+	*20141001
+	  Bug fixed: failed to add Material and delete material
+	  Bug fixed: failed to record transaction history when add or delete material.(in some condition like stock has no material)
+	  Bug fixed: add MoveTransferCommandToTransactionHistory in MoveTransferCommandToCarrierMaterial, to fix lose of reocrd a stockout command.
+
+
+Version 1.0.0 (Released 20140922)
+  -First released version
+
+
+

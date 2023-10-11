@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44713ABE-6280-4499-A7CE-4BC8E3218E68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eCA_HostObject</RootNamespace>
+    <AssemblyName>eCA_HostObject</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>eCA_HostObject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>eCA_HostObject.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="eCALogTool">
+      <HintPath>..\dll\eCALogTool.dll</HintPath>
+    </Reference>
+    <Reference Include="eCA_DBTool, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\eCA_DBTool.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ADODB">
+      <HintPath>..\dll\Interop.ADODB.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\DBManagement\ERP_DBManagement.vb" />
+    <Compile Include="Class\DBManagement\HOST_T_COMMAND_REPORTManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\EPSXBManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\INVMBManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\INVXBManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\INVXFManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\INVXDManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\MOCTAManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\MOCTBManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\MOCTOManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\MOCTPManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\MOCXBManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\MOCXDManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\PURTCManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\PURTDManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\PURTEManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\PURTFManagement.vb" />
+    <Compile Include="Class\DBManagement\HTG_ERP\PURXCManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_COMMAND_REPORT.vb" />
+    <Compile Include="Class\DBManagement\Common_DBManagement.vb" />
+    <Compile Include="Class\DBManagement\GUI_M_Message_SendManagement.vb" />
+    <Compile Include="Class\DBManagement\GUI_M_Message_Send_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\GUI_M_Message_TypeManagement.vb" />
+    <Compile Include="Class\DBManagement\GUI_M_UserManagement.vb" />
+    <Compile Include="Class\DBManagement\HOST_CT_TMP_PO_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\GUI_H_Command_HistManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\HOST_H_Command_HistManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\HOST_H_HS_COMMANDManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\HS_H_HOST_COMMANDManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\HS_T_HOST_COMMANDManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\MCS_H_Command_HistManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\WMS_H_GUI_Command_HistManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\WMS_H_HOST_Command_HistManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\WMS_T_MCS_CommandManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\WMS_T_HOST_CommandManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\WMS_T_GUI_CommandManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\MCS_T_CommandManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\HOST_T_CommandManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\GUI_T_CommandManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_ACCOUNT_REPORTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_CLASS_ASSIGNATION_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_CLASS_ATTENDANCE_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_CLASS_PRODUCTION_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_COUNT_MODIFY_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_INVENTORY_COMPARISONManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_LINE_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_LINE_STATUS_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\Interface\WMS_H_MCS_Command_HistManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_PRODUCE_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_LINE_PRODUCTION_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_PRODUCE_RESUME_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CH_PRODUCTION_REPORT_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CM_CLASS_ASSIGNATIONManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CM_CLASS_ATTENDANCEManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CM_Split_LabelManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_ACCOUNT_REPORTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_GUID_LabelManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_INVENTORY_COMPARISONManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_PRODUCTION_REPORTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_VCManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_VCMappingManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_H_Alarm_HistManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_H_PO_POSTING_HISTManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_H_STOCKTAKINGManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_H_STOCKTAKING_CARRIERManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_H_STOCKTAKING_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_Business_RuleManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_CarrierManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_Item_LabelManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_OwnerManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_Packe_UnitManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_RETURN_SUPPLIER_SETTINGManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_SKU_Packe_StructureManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_SLManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_UUIDManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_ALARMManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_Carrier_ItemManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_Carrier_StatusManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_INBOUND_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_OUTBOUND_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_PO_DTL_TRANSACTIONManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_PO_MERGEManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_PO_POSTINGManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_STOCKTAKINGManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_STOCKTAKING_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_SystemStatusManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_ClassManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_DATA_REPORT_SETManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_MAINTENANCEManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_MAINTENANCE_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_M_SKUManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_MAINTENANCE_STATUSManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_POManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_PO_DTLManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_WO_DTLManagement.vb" />
+    <Compile Include="Class\HostObject\clsHOST_T_COMMAND_REPORT.vb" />
+    <Compile Include="Class\HostObject\clsCLASS_ASSIGNATION.vb" />
+    <Compile Include="Class\HostObject\clsCLASS_ATTENDANCE.vb" />
+    <Compile Include="Class\HostObject\clsClassProduction_HIST.vb" />
+    <Compile Include="Class\HostObject\clsCOUNT_MODIFY_HIST.vb" />
+    <Compile Include="Class\HostObject\clsCLASS_ASSIGNATION_HIST.vb" />
+    <Compile Include="Class\HostObject\clsCLASS_ATTENDANCE_HIST.vb" />
+    <Compile Include="Class\HostObject\clsPO_POSTING.vb" />
+    <Compile Include="Class\HostObject\clsPO_POSTING_HIST.vb" />
+    <Compile Include="Class\HostObject\clsPRODUCE_RESUME_HIST.vb" />
+    <Compile Include="Class\HostObject\clsWMS_CH_ACCOUNT_REPORT.vb" />
+    <Compile Include="Class\HostObject\clsWMS_CH_PRODUCTION_REPORT_HIST.vb" />
+    <Compile Include="Class\HostObject\clsWMS_CM_Split_Label.vb" />
+    <Compile Include="Class\HostObject\clsWMS_CT_ACCOUNT_REPORT.vb" />
+    <Compile Include="Class\HostObject\clsWMS_CT_PRODUCTION_REPORT.vb" />
+    <Compile Include="Class\HostObject\clsWMS_CT_VC.vb" />
+    <Compile Include="Class\HostObject\clsWMS_CT_VCMapping.vb" />
+    <Compile Include="Class\HostObject\clsWMS_T_PO_DTL_TRANSACTION.vb" />
+    <Compile Include="Class\WMSObject\clsAlarm.vb" />
+    <Compile Include="Class\WMSObject\clsALARM_HIST.vb" />
+    <Compile Include="Class\WMSObject\clsBusiness_Rule.vb" />
+    <Compile Include="Class\WMSObject\clsCarrier.vb" />
+    <Compile Include="Class\WMSObject\clsCarrierItem.vb" />
+    <Compile Include="Class\WMSObject\clsCommandReport.vb" />
+    <Compile Include="Class\WMSObject\clsCTGUIDLabel.vb" />
+    <Compile Include="Class\WMSObject\clsGUI_M_Message_Send.vb" />
+    <Compile Include="Class\WMSObject\clsGUI_M_Message_Send_DTL.vb" />
+    <Compile Include="Class\WMSObject\clsGUI_M_Message_Type.vb" />
+    <Compile Include="Class\WMSObject\clsGUI_M_User.vb" />
+    <Compile Include="Class\WMSObject\clsHOST_CT_TMP_PO_DTL.vb" />
+    <Compile Include="Class\WMSObject\clsHSTOCKTAKING.vb" />
+    <Compile Include="Class\WMSObject\clsHSTOCKTAKINGCARRIER.vb" />
+    <Compile Include="Class\WMSObject\clsHSTOCKTAKINGDTL.vb" />
+    <Compile Include="Class\WMSObject\clsINBOUND_DTL.vb" />
+    <Compile Include="Class\WMSObject\clsMAINTENANCE.vb" />
+    <Compile Include="Class\WMSObject\clsMAINTENANCE_DTL.vb" />
+    <Compile Include="Class\HostObject\clsLineInfo_Hist.vb" />
+    <Compile Include="Class\HostObject\clsLineProduction_Hist.vb" />
+    <Compile Include="Class\HostObject\clsLine_Status_Hist.vb" />
+    <Compile Include="Class\HostObject\clsProduce_Hist.vb" />
+    <Compile Include="Class\WMSObject\clsMAINTENANCE_STATUS.vb" />
+    <Compile Include="Class\HostObject\clsDATA_REPORT_SET.vb" />
+    <Compile Include="Class\WMSObject\clsItemLabel.vb" />
+    <Compile Include="Class\WMSObject\clsMPackeUnit.vb" />
+    <Compile Include="Class\WMSObject\clsOUTBOUND_DTL.vb" />
+    <Compile Include="Class\WMSObject\clsPO_MERGE.vb" />
+    <Compile Include="Class\WMSObject\clsRETURNSUPPLIERSETTING.vb" />
+    <Compile Include="Class\WMSObject\clsMSKUPackeStructure.vb" />
+    <Compile Include="Class\WMSObject\clsOwner.vb" />
+    <Compile Include="Class\WMSObject\clsSL.vb" />
+    <Compile Include="Class\WMSObject\clsStocktaking.vb" />
+    <Compile Include="Class\WMSObject\clsSystemStatus.vb" />
+    <Compile Include="Class\WMSObject\clsClass.vb" />
+    <Compile Include="Class\WMSObject\clsPO_DTL.vb" />
+    <Compile Include="Class\WMSObject\clsPO_LINE.vb" />
+    <Compile Include="Class\DBManagement\WMS_CM_Line_AreaManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_LINE_INFOManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_LINE_PRODUCTION_INFOManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_LINE_STATUSManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_CT_PRODUCE_INFOManagement.vb" />
+    <Compile Include="Class\DBManagement\WMS_T_PO_LINEManagement.vb" />
+    <Compile Include="Class\HostObject\clsLine_Status.vb" />
+    <Compile Include="Class\HostObject\clsLineInfo.vb" />
+    <Compile Include="Class\HostObject\clsLineProduction_Info.vb" />
+    <Compile Include="Class\HostObject\clsLine_Area.vb" />
+    <Compile Include="Class\HostObject\clsProduce_Info.vb" />
+    <Compile Include="Class\WMSObject\clsPO.vb" />
+    <Compile Include="Class\WMSObject\clsSKU.vb" />
+    <Compile Include="Class\WMSObject\clsTSTOCKTAKINGDTL.vb" />
+    <Compile Include="Class\WMSObject\clsUUID.vb" />
+    <Compile Include="Class\WMSObject\clsWMS_CH_INVENTORY_COMPARISON.vb" />
+    <Compile Include="Class\WMSObject\clsWMS_CT_INVENTORY_COMPARISON.vb" />
+    <Compile Include="Class\WMSObject\clsWO_DTL.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsEPSXB.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsINVMB.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsINVXB.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsINVXF.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsINVXD.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsMOCTA.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsMOCTB.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsMOCTO.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsMOCTP.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsMOCXB.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsMOCXD.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsPURTC.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsPURTD.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsPURTE.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsPURTF.vb" />
+    <Compile Include="Class\WMSObject\HTG_ERP\clsPURXC.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsFromMCSCommandHist.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsFromHostCommandHist.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsFromGUICommandHist.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsHostToHSCommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsHSToHostCommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsToGUICommandHist.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsToMCSCommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsToHostCommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsToGUICommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsFromMCSCommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsFromHostCommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsFromGUICommand.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsToHostCommandHist.vb" />
+    <Compile Include="Class\WMSObject\Interface\clsToMCSCommandHist.vb" />
+    <Compile Include="clsHandlingObject.vb" />
+    <Compile Include="Enum\enuConnectionType.vb" />
+    <Compile Include="Enum\enuRtnCode.vb" />
+    <Compile Include="Enum\enuMessageType.vb" />
+    <Compile Include="Enum\enuBND.vb" />
+    <Compile Include="Enum\enuCarrierMode.vb" />
+    <Compile Include="Enum\enuDownLoadType.vb" />
+    <Compile Include="Enum\enuAcceptingStatus.vb" />
+    <Compile Include="Enum\enuFileType.vb" />
+    <Compile Include="Enum\enuMainFileType.vb" />
+    <Compile Include="Enum\enuTransaction_Type.vb" />
+    <Compile Include="Enum\enuAction.vb" />
+    <Compile Include="Enum\enuDebitCreditIndicator.vb" />
+    <Compile Include="Enum\enuAlarmType.vb" />
+    <Compile Include="Enum\enuAreaType1.vb" />
+    <Compile Include="Enum\enuBusinessRuleNO.vb" />
+    <Compile Include="Enum\enuMaintenanceNoticeType.vb" />
+    <Compile Include="Enum\enuMaintenanceValueType.vb" />
+    <Compile Include="Enum\enuAreaType2.vb" />
+    <Compile Include="Enum\enuDBEnum.vb" />
+    <Compile Include="Enum\enuLineStatus.vb" />
+    <Compile Include="Enum\enuDocTypeCode.vb" />
+    <Compile Include="Enum\enuMATCH_TYPE.vb" />
+    <Compile Include="Enum\enuPODTLStatus.vb" />
+    <Compile Include="Enum\enuPOSTING_RESULT.vb" />
+    <Compile Include="Enum\enuStatusMode.vb" />
+    <Compile Include="Enum\enuProductionLine.vb" />
+    <Compile Include="Enum\enuStocktaking_Status.vb" />
+    <Compile Include="Enum\enuSTOCKTAKING_TYPE1.vb" />
+    <Compile Include="Enum\enuSTOCKTAKING_TYPE3.vb" />
+    <Compile Include="Enum\enuSTOCKTAKING_TYPE2.vb" />
+    <Compile Include="Enum\enuWrokDataKind.vb" />
+    <Compile Include="Enum\enuPickingKind.vb" />
+    <Compile Include="Enum\enuSEND_STATUS.vb" />
+    <Compile Include="Enum\enuSEND_TYPE.vb" />
+    <Compile Include="Enum\enuSKU_CATALOG.vb" />
+    <Compile Include="Enum\enuSystemStatus.vb" />
+    <Compile Include="Enum\enuSystemType.vb" />
+    <Compile Include="Enum\enuOrderType.vb" />
+    <Compile Include="Enum\enuPOStatus.vb" />
+    <Compile Include="Enum\enuPOType_1.vb" />
+    <Compile Include="Enum\enuPOType_2.vb" />
+    <Compile Include="Enum\enuPOType_3.vb" />
+    <Compile Include="Enum\enuProduceStatus.vb" />
+    <Compile Include="Enum\enuQCStatus.vb" />
+    <Compile Include="Enum\enuStepNo.vb" />
+    <Compile Include="Enum\enuStorageType.vb" />
+    <Compile Include="Enum\enuTransferInType.vb" />
+    <Compile Include="Enum\enuTransferOutType.vb" />
+    <Compile Include="Enum\enuUUID_No.vb" />
+    <Compile Include="Enum\enuWOStatus.vb" />
+    <Compile Include="Enum\enuWOType.vb" />
+    <Compile Include="Module\ModuleDeclaration.vb" />
+    <Compile Include="Module\ModuleHelpFunc.vb" />
+    <Compile Include="Module\Mod_Command_Record.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Class\HostObject\SAG_ERP\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

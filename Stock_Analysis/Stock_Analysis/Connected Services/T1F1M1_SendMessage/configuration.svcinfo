@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.BasicHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data name=&quot;BasicHttpBinding_IWMS_WCFService1&quot; /&gt;" bindingType="basicHttpBinding" name="BasicHttpBinding_IWMS_WCFService1" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://127.0.0.1:8734/WCFService_WMS/&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IWMS_WCFService1&quot; contract=&quot;T1F1M1_SendMessage.IWMS_WCFService&quot; name=&quot;BasicHttpBinding_IWMS_WCFService1&quot; /&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://127.0.0.1:8734/WCFService_WMS/&quot; binding=&quot;basicHttpBinding&quot; bindingConfiguration=&quot;BasicHttpBinding_IWMS_WCFService1&quot; contract=&quot;T1F1M1_SendMessage.IWMS_WCFService&quot; name=&quot;BasicHttpBinding_IWMS_WCFService1&quot; /&gt;" contractName="T1F1M1_SendMessage.IWMS_WCFService" name="BasicHttpBinding_IWMS_WCFService1" />
+  </endpoints>
+</configurationSnapshot>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8F323A3-9904-4E41-AD13-A3FBE1FB2E4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>eCA_TransactionMessage</RootNamespace>
+    <AssemblyName>eCA_TransactionMessage</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>eCA_TransactionMessage.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>eCA_TransactionMessage.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\BaseClass\MSG_Secondary_Message.vb" />
+    <Compile Include="Class\BaseClass\MSG_WMS_JSON_Message_Result.vb" />
+    <Compile Include="Class\BaseClass\MSG_WMS_XML_Message_Result.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_Stocktaking_Respones.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_Stocktaking.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_Release.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_Release_Respones.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendWarehouseData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendTransferOwnerData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_Response.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendInboundReturnData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendSellReturnData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendSellData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_Header.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendInboundData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendOtherOutData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendOtherInData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendTransferData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendReturnData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendPickUpData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_Test.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendPickingReturnData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendInventoryChangeData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendTempInOutrReturnData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_T2F3U12_SKUPackeStructureManagement.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_T2F3U11_PackeUnitManagement.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendSKUChangeData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendSKUUnitConversionData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_InventoryData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendSKUData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendInventoryData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendBuyData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendTempInOutData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendTransactionData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendOutsourceData.vb" />
+    <Compile Include="Class\Host_Message\Receive\CLC\MSG_SendProduceInData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_SendPickingData.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_eWMSMessage.vb" />
+    <Compile Include="Class\Host_Message\Receive\MSG_ASRS_getCompStock.vb" />
+    <Compile Include="Class\Host_Message\Send\MSG_Peratio.vb" />
+    <Compile Include="Class\Host_Message\Send\MSG_ASRS_update_BIN.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T5F1S3_POReceiptReport.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T6F5U2_ItemLabelPrint.vb" />
+    <Compile Include="Class\Mail\CSVOption.vb" />
+    <Compile Include="Class\Mail\MSG_T1F1M1_SendMessage.vb" />
+    <Compile Include="Class\MCS_Message\Receive\MSG_T3F4R2_DeviceAlarmReport.vb" />
+    <Compile Include="Class\MCS_Message\Receive\MSG_T3F5R4_LineInProductionInfoReset.vb" />
+    <Compile Include="Class\MCS_Message\Receive\MSG_T3F5R3_LineInProductionInfoReport.vb" />
+    <Compile Include="Class\MCS_Message\Receive\MSG_T3F5R2_LineInfoReport.vb" />
+    <Compile Include="Class\MCS_Message\Receive\MSG_T3F5R1_LineStatusChangeReport.vb" />
+    <Compile Include="Class\MCS_Message\Send\MSG_T3F5S1_LineProductionResetRequest.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T10F4U1_MainFileImport.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T11F1U12_StocktakingExecution.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T5F1U4_PODownload.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T11F2U1_InventoryComparison.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T5F1U11_POExecution.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T11F3U1_StocktakingDownload.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T11F1U1_PODownload.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T11F1U2_POExecution.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T3F5U5_ClassProductionSet.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T3F5U4_ProductionCountSet.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T3F5U3_LineBigDataAlarmSet.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T3F5U2_Maintenance.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T3F5U1_MaintenanceSet.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T11F1U11_ProducePOExecution.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T11F1U2_ProducePOExecution_back.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_PostingCheck.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_Outbound_Info.vb" />
+    <Compile Include="Class\Host_Message\Send\MSG_ERPReport.vb" />
+    <Compile Include="Class\Host_Message\Send\MSG_SendTransferDataToERP.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T5F1U18_POToWOOneToOne.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T5F1U19_POToWOOneSerialToOneWO.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T5F1S13_TransationPOExecution.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T10F2S1_StocktakingReport.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T5F1S1_WOClose.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T11F1U14_SwitchOnLocationLight.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T5F1S4_PODeliveryReport.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T5F1S90_WOExcuting.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T5F2U62_AutoInbound.vb" />
+    <Compile Include="Class\WMS_Message\Receive\T5F5U1_TransactionOederManagement.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T5F1U1_PO_Management.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T11F1S1_POClose_old.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T10F2U1_StocktakingManagement.vb" />
+    <Compile Include="Class\WMS_Message\Receive\MSG_T11F1S1_POClose.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T10F2U2_StocktakingExecute.vb" />
+    <Compile Include="Class\UI_Message\Receive\MSG_T6F5U1_ItemLabelManagement.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T2F7U1_OwnerManagement.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T2F3U1_SKUManagement.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T5F1U12_POToWO.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T5F1U16_POUpdate.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T5F1U25_POUpdate.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T5F2U5_BatchCreateReceiptByPO.vb" />
+    <Compile Include="Class\WMS_Message\Send\MSG_T5F3U23_POToWO.vb" />
+    <Compile Include="Enum\enuMessageFunctionID.vb" />
+    <Compile Include="Module\ModuleDeclaration.vb" />
+    <Compile Include="Module\CombinationXmlString.vb" />
+    <Compile Include="Module\ParseXmlString.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Class\BaseClass\BasedFormat.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Class\UI_Message\Send\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
