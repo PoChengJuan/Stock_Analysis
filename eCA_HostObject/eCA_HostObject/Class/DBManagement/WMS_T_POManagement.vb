@@ -272,7 +272,7 @@
 
           If DatasetMessage.Tables.Item(0).Rows.Count > 0 Then
             For RowIndex = 0 To DatasetMessage.Tables.Item(0).Rows.Count - 1
-              Dim Info As clsPO
+              Dim Info As clsPO = Nothing
               If SetInfoFromDB(Info, DatasetMessage.Tables.Item(0).Rows(RowIndex)) Then
                 If Info IsNot Nothing Then
                   If ret_dic.ContainsKey(Info.gid) = False Then

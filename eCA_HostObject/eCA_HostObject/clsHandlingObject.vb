@@ -1244,28 +1244,28 @@ Public Class clsHandlingObject
       '  SendMessageToLog("Load WMS_T_Maintenance_Status TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
       '  Return False
       'End If
-      If I_Load_DB_System_Status(RetMsg) = False Then
-        SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
-        SendMessageToLog("Load System_Status TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
-        Return False
-      End If
-      If I_Load_DB_Business_Rule(RetMsg) = False Then
-        SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
-        SendMessageToLog("Load Business_Rule TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
-        Return False
-      End If
+      'If I_Load_DB_System_Status(RetMsg) = False Then
+      '  SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  SendMessageToLog("Load System_Status TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  Return False
+      'End If
+      'If I_Load_DB_Business_Rule(RetMsg) = False Then
+      '  SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  SendMessageToLog("Load Business_Rule TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  Return False
+      'End If
 
-      If I_Load_DB_COMMAND_REPORT(RetMsg) = False Then
-        SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
-        SendMessageToLog("Load WMS_T_COMMAND_REPORT TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
-        Return False
-      End If
+      'If I_Load_DB_COMMAND_REPORT(RetMsg) = False Then
+      '  SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  SendMessageToLog("Load WMS_T_COMMAND_REPORT TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  Return False
+      'End If
 
-      If I_Load_DB_HOST_T_COMMAND_REPORT(RetMsg) = False Then
-        SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
-        SendMessageToLog("Load HOST_T_COMMAND_REPORT TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
-        Return False
-      End If
+      'If I_Load_DB_HOST_T_COMMAND_REPORT(RetMsg) = False Then
+      '  SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  SendMessageToLog("Load HOST_T_COMMAND_REPORT TABLE ERROR", eCALogTool.ILogTool.enuTrcLevel.lvError)
+      '  Return False
+      'End If
 
       'If I_Load_CT_Line_PRODUCTION_INFO(RetMsg) = False Then
       '    SendMessageToLog(RetMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)

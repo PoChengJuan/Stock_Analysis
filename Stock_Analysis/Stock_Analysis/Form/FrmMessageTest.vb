@@ -167,11 +167,11 @@ Public Class FrmMessageTest
         Case enuMessageName.T10F4U1_MainFileImport
           Dim objMSG As eCA_TransactionMessage.MSG_T10F4U1_MainFileImport = Nothing
           If eCA_TransactionMessage.ParseMessage_T10F4U1_MainFileImport(New_Msg, objMSG, RetMsg) = True Then
-            If Module_T10F4U1_MainFileImport.O_T10F4U1_MainFileImport(objMSG, RetMsg, "") = True Then
-              txt_ResultMessage.Text = RetMsg
-            Else
-              txt_ResultMessage.Text = RetMsg
-            End If
+            'If Module_T10F4U1_MainFileImport.O_T10F4U1_MainFileImport(objMSG, RetMsg, "") = True Then
+            '  txt_ResultMessage.Text = RetMsg
+            'Else
+            '  txt_ResultMessage.Text = RetMsg
+            'End If
           Else
             txt_ResultMessage.Text = RetMsg
           End If

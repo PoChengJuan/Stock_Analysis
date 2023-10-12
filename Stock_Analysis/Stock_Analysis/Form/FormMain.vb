@@ -53,19 +53,19 @@ Public Class FormMain
         '接收WMS的Message
         ThreadReceiveWMSMessage = New Thread(New ThreadStart(AddressOf O_thr_WMSDBHandling))                                 'Vito19b18
         ThreadReceiveWMSMessage.IsBackground = True                                                                       'Vito19b18
-        ThreadReceiveWMSMessage.Start()                                                                                   'Vito19b18
+        'ThreadReceiveWMSMessage.Start()                                                                                   'Vito19b18
       ElseIf (ModuleDeclaration.WMSToHandlingInterfaceType And enuHandlingInterfaceType.MQ) = enuHandlingInterfaceType.MQ Then
         ThreadReceiveWMSMessage = New Thread(New ThreadStart(AddressOf O_thr_WMSMQHandling))
         ThreadReceiveWMSMessage.IsBackground = True
-        ThreadReceiveWMSMessage.Start()
+        'ThreadReceiveWMSMessage.Start()
       ElseIf (ModuleDeclaration.WMSToHandlingInterfaceType And enuHandlingInterfaceType.WebAPI) = enuHandlingInterfaceType.WebAPI Then
         ThreadReceiveWMSMessage = New Thread(New ThreadStart(AddressOf Create_HttpListener_Noneblocking_WMS))
         ThreadReceiveWMSMessage.IsBackground = True
-        ThreadReceiveWMSMessage.Start()
+        'ThreadReceiveWMSMessage.Start()
       End If
       ThreadReceiveWMSMessage = New Thread(New ThreadStart(AddressOf Create_HttpListener_Noneblocking_WMS))
       ThreadReceiveWMSMessage.IsBackground = True
-      ThreadReceiveWMSMessage.Start()
+      'ThreadReceiveWMSMessage.Start()
 #End Region
 
       '改用 O_thr_ToOtherDBHandling_Result 回覆其他系統的Message 因為回覆其他系統都是讀取HOST_T_COMMAND
@@ -81,15 +81,15 @@ Public Class FormMain
         '接收GUI的Message
         ThreadReceiveGUIMessage = New Thread(New ThreadStart(AddressOf O_thr_GUIDBHandling))
         ThreadReceiveGUIMessage.IsBackground = True
-        ThreadReceiveGUIMessage.Start()
+        'ThreadReceiveGUIMessage.Start()
       ElseIf (ModuleDeclaration.GUIToHandlingInterfaceType And enuHandlingInterfaceType.MQ) = enuHandlingInterfaceType.MQ Then
         ThreadReceiveGUIMessage = New Thread(New ThreadStart(AddressOf O_thr_GUIMQHandling))
         ThreadReceiveGUIMessage.IsBackground = True
-        ThreadReceiveGUIMessage.Start()
+        'ThreadReceiveGUIMessage.Start()
       ElseIf (ModuleDeclaration.GUIToHandlingInterfaceType And enuHandlingInterfaceType.WebAPI) = enuHandlingInterfaceType.WebAPI Then
         ThreadReceiveGUIMessage = New Thread(New ThreadStart(AddressOf Create_HttpListener_Noneblocking_GUI))
         ThreadReceiveGUIMessage.IsBackground = True
-        ThreadReceiveGUIMessage.Start()
+        'ThreadReceiveGUIMessage.Start()
       End If
 #End Region
 
@@ -102,11 +102,11 @@ Public Class FormMain
       ElseIf (ModuleDeclaration.MCSToHandlingInterfaceType And enuHandlingInterfaceType.MQ) = enuHandlingInterfaceType.MQ Then
         ThreadReceiveMCSMessage = New Thread(New ThreadStart(AddressOf O_thr_MCSMQHandling))
         ThreadReceiveMCSMessage.IsBackground = True
-        ThreadReceiveMCSMessage.Start()
+        'ThreadReceiveMCSMessage.Start()
       ElseIf (ModuleDeclaration.MCSToHandlingInterfaceType And enuHandlingInterfaceType.WebAPI) = enuHandlingInterfaceType.WebAPI Then
         ThreadReceiveMCSMessage = New Thread(New ThreadStart(AddressOf Create_HttpListener_Noneblocking_MCS))
         ThreadReceiveMCSMessage.IsBackground = True
-        ThreadReceiveMCSMessage.Start()
+        'ThreadReceiveMCSMessage.Start()
       End If
 #End Region
 
@@ -115,15 +115,15 @@ Public Class FormMain
         '接收MCS的Message
         ThreadReceiveNSMessage = New Thread(New ThreadStart(AddressOf O_thr_NSDBHandling))
         ThreadReceiveNSMessage.IsBackground = True
-        ThreadReceiveNSMessage.Start()
+        'ThreadReceiveNSMessage.Start()
       ElseIf (ModuleDeclaration.NSToHandlingInterfaceType And enuHandlingInterfaceType.MQ) = enuHandlingInterfaceType.MQ Then
         ThreadReceiveNSMessage = New Thread(New ThreadStart(AddressOf O_thr_NSMQHandling))
         ThreadReceiveNSMessage.IsBackground = True
-        ThreadReceiveNSMessage.Start()
+        'ThreadReceiveNSMessage.Start()
       ElseIf (ModuleDeclaration.NSToHandlingInterfaceType And enuHandlingInterfaceType.WebAPI) = enuHandlingInterfaceType.WebAPI Then
         ThreadReceiveNSMessage = New Thread(New ThreadStart(AddressOf Create_HttpListener_Noneblocking_NS))
         ThreadReceiveNSMessage.IsBackground = True
-        ThreadReceiveNSMessage.Start()
+        'ThreadReceiveNSMessage.Start()
       End If
 #End Region
 
@@ -135,25 +135,25 @@ Public Class FormMain
          (ModuleDeclaration.HandlingToNSInterfaceType And enuHandlingInterfaceType.DB) = enuHandlingInterfaceType.DB Then
         ThreadTransmitWMSMessage = New Thread(New ThreadStart(AddressOf O_thr_ToOtherDBHandling_Result))
         ThreadTransmitWMSMessage.IsBackground = True
-        ThreadTransmitWMSMessage.Start()
+        'ThreadTransmitWMSMessage.Start()
       End If
 
       If (ModuleDeclaration.HandlingToWMSInterfaceType And enuHandlingInterfaceType.MQ) = enuHandlingInterfaceType.MQ Then
         ThreadReceiveMCSMessage = New Thread(New ThreadStart(AddressOf O_thr_ToWMSMQHandling_Result))
         ThreadReceiveMCSMessage.IsBackground = True
-        ThreadReceiveMCSMessage.Start()
+        'ThreadReceiveMCSMessage.Start()
       End If
 
       If (ModuleDeclaration.HandlingToGUIInterfaceType And enuHandlingInterfaceType.MQ) = enuHandlingInterfaceType.MQ Then
         ThreadReceiveMCSMessage = New Thread(New ThreadStart(AddressOf O_thr_ToGUIMQHandling_Result))
         ThreadReceiveMCSMessage.IsBackground = True
-        ThreadReceiveMCSMessage.Start()
+        'ThreadReceiveMCSMessage.Start()
       End If
 
       If (ModuleDeclaration.HandlingToMCSInterfaceType And enuHandlingInterfaceType.MQ) = enuHandlingInterfaceType.MQ Then
         ThreadReceiveMCSMessage = New Thread(New ThreadStart(AddressOf O_thr_ToMCSMQHandling_Result))
         ThreadReceiveMCSMessage.IsBackground = True
-        ThreadReceiveMCSMessage.Start()
+        'ThreadReceiveMCSMessage.Start()
       End If
 #End Region
 
@@ -179,7 +179,7 @@ Public Class FormMain
          (ModuleDeclaration.MCSToHandlingInterfaceType And enuHandlingInterfaceType.WebService) = enuHandlingInterfaceType.WebService OrElse
          (ModuleDeclaration.WMSToHandlingInterfaceType And enuHandlingInterfaceType.WebService) = enuHandlingInterfaceType.WebService OrElse
          (ModuleDeclaration.NSToHandlingInterfaceType And enuHandlingInterfaceType.WebService) = enuHandlingInterfaceType.WebService Then
-        WCFHostOpen()
+        'WCFHostOpen()
       End If
 
       '处理自动执行的Thread

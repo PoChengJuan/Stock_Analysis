@@ -930,12 +930,12 @@ Module Module_ProcessMessage
       Dim obj As MSG_T10F4U1_MainFileImport = Nothing
       If ParseXmlString.ParseMessage_T10F4U1_MainFileImport(strXmlMessage, obj, ret_strResultMsg) = True Then
         '執行相對應的事件
-        If Module_T10F4U1_MainFileImport.O_T10F4U1_MainFileImport(obj, ret_strResultMsg, ret_strWaitUUID) = True Then
-          Return True
-        Else
-          gMain.SendMessageToLog("O_Process_Message Module_T10F4U1_MainFileImport Failed, ResultMsg=" & ret_strResultMsg, eCALogTool.ILogTool.enuTrcLevel.lvWARN)
-          Return False
-        End If
+        'If Module_T10F4U1_MainFileImport.O_T10F4U1_MainFileImport(obj, ret_strResultMsg, ret_strWaitUUID) = True Then
+        '  Return True
+        'Else
+        '  gMain.SendMessageToLog("O_Process_Message Module_T10F4U1_MainFileImport Failed, ResultMsg=" & ret_strResultMsg, eCALogTool.ILogTool.enuTrcLevel.lvWARN)
+        '  Return False
+        'End If
       Else
         gMain.SendMessageToLog("ParseMessage_T10F4U1_MainFileImport Failed, ResultMsg=" & ret_strResultMsg, eCALogTool.ILogTool.enuTrcLevel.lvError)
         Return False
