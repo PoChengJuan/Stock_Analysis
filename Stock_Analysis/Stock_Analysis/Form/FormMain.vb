@@ -5,6 +5,7 @@ Imports eCA_HostObject
 Imports System.Net
 Imports System.IO
 Imports System.Net.Http
+Imports System.ComponentModel
 
 ''' <summary>
 ''' 20181117
@@ -205,7 +206,7 @@ Public Class FormMain
       'ThreadAutoReport = New Thread(New ThreadStart(AddressOf O_thr_Auto_Report))
       'ThreadAutoReport.IsBackground = True
       'ThreadAutoReport.Start()
-
+      MainFile_DGV.AllowUserToOrderColumns = True
 
     Catch ex As Exception
       SendMessageToLog(ex.ToString, eCALogTool.ILogTool.enuTrcLevel.lvError)
@@ -923,11 +924,68 @@ Public Class FormMain
         Console.WriteLine(responseContent)
         SendMessageToLog("[Request]：" & responseContent, eCALogTool.ILogTool.enuTrcLevel.lvTRACE)
 
+        Dim data1 = New With {
+    .No = 1,
+    .Name = "John"
+}
+
+        ' 创建数据列表，包含多个匿名类型对象
+        Dim dataList As New List(Of Object)
+        'dataList.Add(New With {.No = 1, .Name = "John"})
+        'dataList.Add(New With {.No = 2, .Name = "Alice"})
+        'dataList.Add(New With {.No = 3, .Name = "Bob"})
+        For Each obj In data
+          dataList.Add(New With {.Data = obj.Date,
+                       .No = CDec(obj.SecuritiesCompanyCode),
+                       .Name = obj.CompanyName,
+                       .PriceEarningRatio = obj.PriceEarningRatio,
+                       .DividendPerShare = obj.DividendPerShare,
+                       .YieldRatio = obj.YieldRatio,
+                       .PriceBookRatio = obj.PriceBookRatio}
+                       )
+        Next
+        MainFile_DGV.AllowUserToOrderColumns = True
+
+        MainFile_DGV.DataSource = dataList
+        'Dim cellStyle As DataGridViewCellStyle = New DataGridViewCellStyle()
+        'cellStyle.BackColor = Color.Aqua
+        'cellStyle.Font = New Font("Verdana", 10, FontStyle.Bold)
+
+        'Dim DGV_CELL As DataGridViewCell = New DataGridViewTextBoxCell()
+        'Dim DGV_COLUMN As DataGridViewColumn = New DataGridViewColumn(DGV_CELL)
+        'DGV_COLUMN.HeaderText = "編號"
+        'DGV_COLUMN.Name = "123"
+        'MainFile_DGV.Columns.AddRange(DGV_COLUMN)
       Else
         ' 处理请求失败的情况
         Console.WriteLine("请求失败. HTTP状态码: " & response.StatusCode)
       End If
     End Using
+  End Sub
+
+  Private Sub MainFile_DGV_ColumnHeaderMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles MainFile_DGV.ColumnHeaderMouseClick
+    ' 在此处编写事件处理逻辑
+    ' 你可以使用 e.ColumnIndex 来获取点击的列索引
+    ' 你可以在这里编写列头点击时要执行的操作
+    'Console.WriteLine("请求失败. HTTP状态码: ")
+
+    'Dim columnIndex As Integer = e.ColumnIndex
+
+    '' 检查是否是有效的列索引
+    'If columnIndex >= 0 AndAlso columnIndex < MainFile_DGV.Columns.Count Then
+    '  ' 获取列标题
+    '  Dim columnName As String = MainFile_DGV.Columns(columnIndex).Name
+
+    '  ' 执行排序逻辑
+    '  If Not String.IsNullOrEmpty(columnName) Then
+    '    ' 根据列标题执行排序，这是一个简单的示例
+    '    If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+    '      MainFile_DGV.Sort(MainFile_DGV.Columns(columnIndex), ListSortDirection.Descending)
+    '    Else
+    '      MainFile_DGV.Sort(MainFile_DGV.Columns(columnIndex), ListSortDirection.Ascending)
+    '    End If
+    '  End If
+    'End If
   End Sub
 
 
