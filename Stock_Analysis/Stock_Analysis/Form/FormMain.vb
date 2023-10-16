@@ -15,7 +15,7 @@ Imports System.ComponentModel
 ''' </summary>
 Public Class FormMain
   Friend WithEvents NotifyIcon As System.Windows.Forms.NotifyIcon
-
+  Dim dataList As New List(Of Object)
   Private Sub FormMain_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
     Try
       With gMain
@@ -36,7 +36,7 @@ Public Class FormMain
       'NotifyIconWatchDog.ContextMenuStrip = MainMenuContextMenuStrip
 
 
-      Me.WindowState = FormWindowState.Minimized
+      Me.WindowState = FormWindowState.Maximized
       Me.ShowInTaskbar = False
 
       SendMessageToLog("[HOST Start]", eCALogTool.ILogTool.enuTrcLevel.lvTRACE)
@@ -207,7 +207,6 @@ Public Class FormMain
       'ThreadAutoReport.IsBackground = True
       'ThreadAutoReport.Start()
       MainFile_DGV.AllowUserToOrderColumns = True
-
     Catch ex As Exception
       SendMessageToLog(ex.ToString, eCALogTool.ILogTool.enuTrcLevel.lvError)
     End Try
@@ -930,13 +929,16 @@ Public Class FormMain
 }
 
         ' 创建数据列表，包含多个匿名类型对象
-        Dim dataList As New List(Of Object)
+        'Dim dataList As New List(Of Object)
         'dataList.Add(New With {.No = 1, .Name = "John"})
         'dataList.Add(New With {.No = 2, .Name = "Alice"})
         'dataList.Add(New With {.No = 3, .Name = "Bob"})
+
+
         For Each obj In data
           dataList.Add(New With {.Data = obj.Date,
                        .No = CDec(obj.SecuritiesCompanyCode),
+                       .Type = "上櫃",
                        .Name = obj.CompanyName,
                        .PriceEarningRatio = obj.PriceEarningRatio,
                        .DividendPerShare = obj.DividendPerShare,
@@ -944,9 +946,18 @@ Public Class FormMain
                        .PriceBookRatio = obj.PriceBookRatio}
                        )
         Next
+
         MainFile_DGV.AllowUserToOrderColumns = True
 
         MainFile_DGV.DataSource = dataList
+
+        MainFile_DGV.Columns("Data").HeaderText = "日期"
+        MainFile_DGV.Columns("No").HeaderText = "証券公司代碼"
+        MainFile_DGV.Columns("Name").HeaderText = "公司名稱"
+        MainFile_DGV.Columns("PriceEarningRatio").HeaderText = "市盈率"
+        MainFile_DGV.Columns("DividendPerShare").HeaderText = "每股股息"
+        MainFile_DGV.Columns("YieldRatio").HeaderText = "殖利率"
+        MainFile_DGV.Columns("PriceBookRatio").HeaderText = "市淨率"
         'Dim cellStyle As DataGridViewCellStyle = New DataGridViewCellStyle()
         'cellStyle.BackColor = Color.Aqua
         'cellStyle.Font = New Font("Verdana", 10, FontStyle.Bold)
@@ -969,23 +980,92 @@ Public Class FormMain
     ' 你可以在这里编写列头点击时要执行的操作
     'Console.WriteLine("请求失败. HTTP状态码: ")
 
-    'Dim columnIndex As Integer = e.ColumnIndex
+    Dim columnIndex As Integer = e.ColumnIndex
 
-    '' 检查是否是有效的列索引
-    'If columnIndex >= 0 AndAlso columnIndex < MainFile_DGV.Columns.Count Then
-    '  ' 获取列标题
-    '  Dim columnName As String = MainFile_DGV.Columns(columnIndex).Name
+    ' 检查是否是有效的列索引
+    If columnIndex >= 0 AndAlso columnIndex < MainFile_DGV.Columns.Count Then
+      ' 获取列标题
+      Dim columnName As String = MainFile_DGV.Columns(columnIndex).Name
 
-    '  ' 执行排序逻辑
-    '  If Not String.IsNullOrEmpty(columnName) Then
-    '    ' 根据列标题执行排序，这是一个简单的示例
-    '    If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
-    '      MainFile_DGV.Sort(MainFile_DGV.Columns(columnIndex), ListSortDirection.Descending)
-    '    Else
-    '      MainFile_DGV.Sort(MainFile_DGV.Columns(columnIndex), ListSortDirection.Ascending)
-    '    End If
-    '  End If
-    'End If
+      ' 执行排序逻辑
+      If Not String.IsNullOrEmpty(columnName) Then
+        If columnName = "Data" Then
+          If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+            MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.Data).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Descending
+          Else
+            MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.Data).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending
+          End If
+        ElseIf columnName = "No" Then
+          If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+            MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.No).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Descending
+          Else
+            MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.No).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending
+          End If
+        ElseIf columnName = "Name" Then
+          If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+            MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.Name).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Descending
+          Else
+            MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.Name).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending
+          End If
+        ElseIf columnName = "PriceEarningRatio" Then
+          If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+            MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.PriceEarningRatio).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Descending
+          Else
+            MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.PriceEarningRatio).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending
+          End If
+        ElseIf columnName = "DividendPerShare" Then
+          If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+            MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.DividendPerShare).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Descending
+          Else
+            MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.DividendPerShare).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending
+          End If
+        ElseIf columnName = "YieldRatio" Then
+          If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+            MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.YieldRatio).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Descending
+          Else
+            MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.YieldRatio).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending
+          End If
+        ElseIf columnName = "PriceBookRatio" Then
+          If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+            MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.PriceBookRatio).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Descending
+          Else
+            MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.PriceBookRatio).ToList()
+            MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending
+          End If
+        End If
+        ' 根据列标题执行排序，这是一个简单的示例
+        'If MainFile_DGV.Columns(columnIndex).HeaderCell.SortGlyphDirection = SortOrder.Ascending Then
+        '  MainFile_DGV.Sort(MainFile_DGV.Columns(columnIndex), ListSortDirection.Descending)
+        'Else
+        '  MainFile_DGV.Sort(MainFile_DGV.Columns(columnIndex), ListSortDirection.Ascending)
+        'End If
+
+      End If
+    End If
+  End Sub
+
+  Private Sub 升ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 升ToolStripMenuItem.Click
+    MainFile_DGV.DataSource = dataList.OrderBy(Function(p) p.YieldRatio).ToList()
+    'MainFile_DGV.Sort(MainFile_DGV.Columns("YieldRatio"), ListSortDirection.Ascending)
+  End Sub
+
+  Private Sub 降ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 降ToolStripMenuItem.Click
+    'MainFile_DGV.Sort(MainFile_DGV.Columns("YieldRatio"), ListSortDirection.Descending)
+    MainFile_DGV.DataSource = dataList.OrderByDescending(Function(p) p.YieldRatio).ToList()
+
   End Sub
 
 
